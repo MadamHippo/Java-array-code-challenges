@@ -14,8 +14,14 @@ HINT: Using our approach from the last hint, we can apply the same principle to 
 
 public class GroceryList {
   public static boolean hasDuplicates(String[] groceryList) {
-    for (String items : groceryList){
-      
+    
+    // Using the same array twice using nested loop:
+    for (int i = 0; i < groceryList.length; i++){
+      for (int j = i+1; j < groceryList.length; j++){
+        if (groceryList[i] == groceryList[j]) {
+          return true;
+        }
+      }
     }
     
     return false;
